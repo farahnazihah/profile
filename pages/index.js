@@ -51,7 +51,7 @@ const education = {
 };
 
 const organizational = {
-  Heading: "",
+  Heading: "Organizational Experience",
 };
 
 export default function Index() {

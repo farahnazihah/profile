@@ -24,6 +24,7 @@ const Experience = ({ title, description, period, details }) => {
       {details.map((value, index) => {
         return (
           <PositionDetails
+            key={index + 1}
             positionTitle={value.positionTitle}
             period={value.period}
             description={value.description}

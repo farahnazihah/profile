@@ -31,7 +31,7 @@ const PositionDetails = ({
         <Text fontSize={["10px", "xs", "xs"]}> {description}</Text>
         <UnorderedList fontSize={["10px", "xs", "xs"]}>
           {positionDetails.map((value, index) => {
-            return <ListItem>{value}</ListItem>;
+            return <ListItem key={index + 1}>{value}</ListItem>;
           })}
         </UnorderedList>
       </Flex>

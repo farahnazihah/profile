@@ -26,6 +26,7 @@ const ExperienceLayout = ({ heading, experience }) => {
       {experience.map((value, index) => {
         return (
           <Experience
+            key={index + 1}
             title={value.title}
             description={value.description}
             period={value.period}
