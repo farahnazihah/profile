@@ -1,0 +1,28 @@
+{
+  "name": "profile",
+  "private": true,
+  "scripts": {
+    "dev": "next -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.17",
+    "@chakra-ui/react": "^1.7.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@fontsource/montserrat": "^4.5.1",
+    "framer-motion": "^4.1.17",
+    "next": "12.0.3",
+    "next-google-fonts": "^2.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.3"
+  }
+}
