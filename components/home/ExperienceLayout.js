@@ -20,7 +20,7 @@ const ExperienceLayout = ({ heading, experience }) => {
         >
           {heading}
         </Text>
-        <Divider />
+        <Divider borderBottomWidth="3px" borderColor="gray.400" />
       </Box>
       <Spacer />
       <Flex maxW={["100%", "100%", "65%"]} direction="column">

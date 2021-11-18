@@ -19,7 +19,7 @@ const PositionDetails = ({
     <Flex>
       <VStack pt="0.5rem" pr="1rem">
         <Circle bgColor="tosca.400" size="12px" />
-        <Divider orientation="vertical" />
+        <Divider borderColor="gray.400" orientation="vertical" />
       </VStack>
       <Flex pb="0.5rem" direction="column">
         <Text fontWeight="bold" fontSize={["md", "l", "xl"]} color="tosca.400">
