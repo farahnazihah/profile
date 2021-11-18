@@ -71,19 +71,19 @@ const organizational = {
       title: "Forum Ukhuwah dan Kajian Islam (FUKI) Fasilkom UI",
       details: [
         {
-          positionTitle: "Vice Head of Media Boreau",
+          positionTitle: "Vice Head of Media Division",
           period: "January 2021 - Desember 2021",
           positionDetails: [
             "Manage the team (staffing, coordinating)",
-            "Make designs for social media based on request from other Departement or Boreau in FUKI",
+            "Make designs for social media based on request from other Division in FUKI",
             "Responsible for FUKI’s branding in social media",
           ],
         },
         {
-          positionTitle: "Staff of Media Boreau",
+          positionTitle: "Staff of Media Division",
           period: "January 2020 - Desember 2020",
           positionDetails: [
-            "Make designs for social media based on request from other Departement or Boreau in FUKI",
+            "Make designs for social media based on request from other Division in FUKI",
           ],
         },
       ],
