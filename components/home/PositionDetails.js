@@ -21,7 +21,7 @@ const PositionDetails = ({
         <Circle bgColor="tosca.400" size="12px" />
         <Divider orientation="vertical" />
       </VStack>
-      <Flex direction="column">
+      <Flex pb="0.5rem" direction="column">
         <Text fontWeight="bold" fontSize={["md", "l", "xl"]} color="tosca.400">
           {positionTitle}
         </Text>

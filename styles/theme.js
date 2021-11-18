@@ -12,9 +12,9 @@ const colors = {
     400: "#75A797",
     600: "#4A7265",
   },
-  whitetosca: "F8F8F8",
+  whitetosca: "#F8F8F8",
   background: {
-    light: "whitetosca",
+    light: "#F8F8F8",
     dark: "gray.800",
   },
   card: {

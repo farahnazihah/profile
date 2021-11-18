@@ -10,7 +10,6 @@ const ContainerPage = ({ children }) => {
     <Box
       justifyContent="center"
       flexDirection="column"
-      bg={"background." + colorMode}
       color={"content." + colorMode}
       px="0rem"
     >

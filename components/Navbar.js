@@ -11,16 +11,12 @@ const Navbar = () => {
     position: sticky;
     z-index: 10;
     top: 0;
+    background: ${colorMode === "light" ? "#F8F8F8" : "#1A202C"};
+    transition: all 0.25s linear 0s;
   `;
 
   return (
-    <Navbar
-      width="100%"
-      as="nav"
-      py={2}
-      mb={[0, 0, 8]}
-      bg={colorMode == "light" ? "whitetosca" : "gray.800"}
-    >
+    <Navbar width="100%" as="nav" py={2} mb={[0, 0, 8]}>
       <HStack spacing="2rem">
         <NextLink href="/" passHref>
           <Button

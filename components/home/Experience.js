@@ -11,7 +11,7 @@ import PositionDetails from "./PositionDetails";
 
 const Experience = ({ title, description, period, details }) => {
   return (
-    <Flex maxW={["100%", "100%", "70%"]} direction="column">
+    <Flex mb="1rem" direction="column">
       <Text fontWeight="bold" fontSize={["xl", "2xl", "2xl"]}>
         {title}
       </Text>

@@ -23,17 +23,19 @@ const ExperienceLayout = ({ heading, experience }) => {
         <Divider />
       </Box>
       <Spacer />
-      {experience.map((value, index) => {
-        return (
-          <Experience
-            key={index + 1}
-            title={value.title}
-            description={value.description}
-            period={value.period}
-            details={value.details}
-          />
-        );
-      })}
+      <Flex maxW={["100%", "100%", "60%"]} direction="column">
+        {experience.map((value, index) => {
+          return (
+            <Experience
+              key={index + 1}
+              title={value.title}
+              description={value.description}
+              period={value.period}
+              details={value.details}
+            />
+          );
+        })}
+      </Flex>
     </Flex>
   );
 };
