@@ -15,7 +15,7 @@ const ExperienceLayout = ({ heading, experience }) => {
       <Box mr={("0", "0", "5%")} mb="1rem">
         <Text
           fontWeight="bold"
-          fontSize={["2xl", "3xl", "3xl"]}
+          fontSize={["xl", "2xl", "2xl"]}
           color="tosca.400"
         >
           {heading}
@@ -23,7 +23,7 @@ const ExperienceLayout = ({ heading, experience }) => {
         <Divider />
       </Box>
       <Spacer />
-      <Flex maxW={["100%", "100%", "60%"]} direction="column">
+      <Flex maxW={["100%", "100%", "65%"]} direction="column">
         {experience.map((value, index) => {
           return (
             <Experience
