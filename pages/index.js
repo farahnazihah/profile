@@ -110,6 +110,13 @@ const organizational = {
 export default function Index() {
   return (
     <>
+      <head>
+        <title>Home - Farah Nazihah</title>
+        <meta
+          property="og:description"
+          content="Farah Nazihah's personal website."
+        />
+      </head>
       <ContainerPage>
         <ProfileDescription />
         <ExperienceLayout
