@@ -37,11 +37,7 @@ export default function ProfileDescription() {
           align={["center", "center", "initial"]}
           spacing="0.1rem"
         >
-          <Text
-            color={["white", "tosca.400", "white"]} //delete this later
-            fontWeight="Bold"
-            fontSize={["2xl", "2xl", "3xl"]}
-          >
+          <Text fontWeight="Bold" fontSize={["2xl", "2xl", "3xl"]}>
             Farah Nazihah
           </Text>
           <Text

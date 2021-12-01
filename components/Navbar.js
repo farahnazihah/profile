@@ -11,7 +11,9 @@ const Navbar = () => {
     position: sticky;
     z-index: 10;
     top: 0;
-    background: ${colorMode === "light" ? "#F8F8F8" : "#1A202C"};
+    background: ${colorMode === "light"
+      ? "background.light"
+      : "background.dark"};
     transition: all 0.25s linear 0s;
   `;
 

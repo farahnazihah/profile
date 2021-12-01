@@ -51,7 +51,7 @@ const Footer = () => {
             </Link>
           </HStack>
         </Center>
-        <Center fontSize={["m", "l", "xl"]} w="100%" pb={[1, 2, 4]}>
+        <Center fontSize={["s", "m", "l"]} w="100%" pb={[1, 2, 4]}>
           © 2021 betaorionis
         </Center>
       </Box>
