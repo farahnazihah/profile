@@ -106,13 +106,13 @@ export default function ProfileDescription() {
               </Link>
             </HStack>
             <Spacer />
-            <Button
+            {/* <Button
               color="white"
               bgColor="tosca.400"
               _hover={{ bgColor: "tosca.600" }}
             >
               Download CV
-            </Button>
+            </Button> */}
           </Flex>
         </Stack>
       </Flex>
