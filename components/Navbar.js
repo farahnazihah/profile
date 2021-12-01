@@ -11,10 +11,7 @@ const Navbar = () => {
     position: sticky;
     z-index: 10;
     top: 0;
-    background: ${colorMode === "light"
-      ? "background.light"
-      : "background.dark"};
-    transition: all 0.25s linear 0s;
+    background: ${colorMode === "light" ? "#F8F8F8" : "#1A202C"};
   `;
 
   return (
@@ -31,7 +28,7 @@ const Navbar = () => {
             Home
           </Button>
         </NextLink>
-        <NextLink href="/projects/" passHref>
+        {/* <NextLink href="/projects/" passHref>
           <Button
             as="a"
             variant="ghost"
@@ -41,7 +38,7 @@ const Navbar = () => {
           >
             Projects
           </Button>
-        </NextLink>
+        </NextLink> */}
       </HStack>
       <Spacer />
       <DarkModeSwitch />
