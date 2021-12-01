@@ -82,10 +82,7 @@ export default function ProfileDescription() {
                   _hover={{ color: "tosca.600" }}
                 />
               </Link>
-              <Link
-                href="https://www.linkedin.com/in/farah-nazihah/"
-                isExternal
-              >
+              <Link href="https://github.com/farahnazihah/" isExternal>
                 <Icon
                   as={FaGithub}
                   w="2em"
@@ -93,10 +90,7 @@ export default function ProfileDescription() {
                   _hover={{ color: "tosca.600" }}
                 />
               </Link>
-              <Link
-                href="https://www.linkedin.com/in/farah-nazihah/"
-                isExternal
-              >
+              <Link href="https://gitlab.com/farahnazihah/" isExternal>
                 <Icon
                   as={FaGitlab}
                   w="2em"
