@@ -25,11 +25,11 @@ const PositionDetails = ({
         <Text fontWeight="bold" fontSize={["md", "l", "xl"]} color="tosca.400">
           {positionTitle}
         </Text>
-        <Text fontSize={["xs", "s", "md"]} color="gray.400">
+        <Text fontSize={["s", "s", "md"]} color="gray.400">
           {period}
         </Text>
-        <Text fontSize={["xs", "xs", "xs"]}> {description}</Text>
-        <UnorderedList fontSize={["xs", "xs", "xs"]}>
+        <Text fontSize={["s", "s", "s"]}> {description}</Text>
+        <UnorderedList fontSize={["s", "s", "s"]}>
           {positionDetails.map((value, index) => {
             return <ListItem key={index + 1}>{value}</ListItem>;
           })}

@@ -2,11 +2,6 @@ import { extendTheme } from "@chakra-ui/react";
 import { theme as chakraTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
-const fonts = {
-  body: "Montserrat",
-  heading: "Montserrat",
-};
-
 const colors = {
   tosca: {
     400: "#75A797",
@@ -54,7 +49,6 @@ const fontWeight = {
 
 const customTheme = extendTheme({
   colors,
-  fonts,
   breakpoints,
   fontSize,
   fontWeight,

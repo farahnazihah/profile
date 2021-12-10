@@ -24,6 +24,7 @@ export default function ProfileDescription() {
         direction={["column", "column", "row"]}
         my="3rem"
         align="center"
+        mx="auto"
       >
         <Image
           borderRadius="full"
