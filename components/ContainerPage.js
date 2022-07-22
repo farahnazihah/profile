@@ -14,7 +14,7 @@ const ContainerPage = ({ children }) => {
       px="0rem"
     >
       <Navbar />
-      <Flex as="main" flexDirection="column">
+      <Flex as="main" flexDirection="column" minH="55vh">
         {children}
       </Flex>
       <Footer />

@@ -6,8 +6,8 @@ import styled from "@emotion/styled";
 
 const Footer = () => {
   return (
-    <Center>
-      <Box display="block" mt={["3rem", "3rem", "3rem"]}>
+    <Center mt={"auto"}>
+      <Box display="block" mt="3rem">
         <Center>
           <HStack spacing={["1em", "2em", "4em"]} p={[1, 2, 4]}>
             <Link href="https://www.instagram.com/frhnzh_/" isExternal>
