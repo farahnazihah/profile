@@ -52,7 +52,7 @@ export default function BlogCard({ data }) {
               w={["2em", "3em", "3em"]}
               h="auto"
               _hover={{ color: "tosca.600" }}
-              onClick={() => handleLike()}
+              onClick={() => handleEdit()}
             />
             <Text textAlign={"center"}>Edit</Text>
           </Center>
