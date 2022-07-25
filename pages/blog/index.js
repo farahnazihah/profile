@@ -4,7 +4,7 @@ import { getListAllBlog } from "../../api";
 import {
   Button,
   Heading,
-  Link,
+  Box,
   Text,
   Modal,
   ModalOverlay,
@@ -14,7 +14,13 @@ import {
   ModalBody,
   ModalCloseButton,
   Input,
+  ButtonGroup,
+  IconButton,
+  Tooltip,
+  Flex,
+  Spacer,
 } from "@chakra-ui/react";
+import { AddIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 import { useDisclosure } from "@chakra-ui/react";
 import { useState, useContext } from "react";
@@ -80,6 +86,7 @@ export default function Blog({ listBlog }) {
                 >
                   Wrong password
                 </Text>
+                <Text>For sistech: password &quot;sistech&quot;</Text>
                 <Input value={pwd} onChange={handleChange} />
               </ModalBody>
 
@@ -98,43 +105,33 @@ export default function Blog({ listBlog }) {
               </ModalFooter>
             </ModalContent>
           </Modal>
-
           <Heading color="tosca.400">Stories and Adventures</Heading>
-          {creatorMode ? (
-            <Button
-              onClick={() => {
-                exitCreatorMode();
-              }}
-              size="md"
-              w={["100%", "50%"]}
-              href="/blog/create"
-            >
-              Exit Creator Mode
-            </Button>
-          ) : (
-            <Button
-              onClick={onOpen}
-              size="md"
-              w={["100%", "50%"]}
-              href="/blog/create"
-            >
-              Creator Mode
-            </Button>
-          )}
+          <Flex>
+            <Spacer />
+            {creatorMode ? (
+              <ButtonGroup size="sm" isAttached variant="outline">
+                <Button
+                  onClick={() => {
+                    exitCreatorMode();
+                  }}
+                >
+                  Exit Creator Mode
+                </Button>
+                <Tooltip label="Create new blog">
+                  <IconButton
+                    onClick={() => router.push("/blog/create/")}
+                    aria-label="Add to friends"
+                    icon={<AddIcon />}
+                  />
+                </Tooltip>
+              </ButtonGroup>
+            ) : (
+              <ButtonGroup size="sm" isAttached variant="outline">
+                <Button onClick={onOpen}>Creator Mode</Button>
+              </ButtonGroup>
+            )}
+          </Flex>
 
-          {creatorMode && (
-            <Button
-              as={"button"}
-              variant="outline"
-              size="md"
-              w={["100%", "50%"]}
-              onClick={() => {
-                router.push("/blog/create");
-              }}
-            >
-              Create new post
-            </Button>
-          )}
           {listBlog.map((blog, index) => (
             <BlogCard data={blog} key={index + 1} />
           ))}

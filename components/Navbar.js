@@ -28,7 +28,7 @@ const Navbar = () => {
             Home
           </Button>
         </NextLink>
-        {/* <NextLink href="/projects/" passHref>
+        <NextLink href="/blog/" passHref>
           <Button
             as="a"
             variant="ghost"
@@ -36,9 +36,9 @@ const Navbar = () => {
             style={{ color: "tosca.400" }}
             _hover={{ color: "tosca.600" }}
           >
-            Projects
+            Blog
           </Button>
-        </NextLink> */}
+        </NextLink>
       </HStack>
       <Spacer />
       <DarkModeSwitch />
