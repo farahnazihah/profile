@@ -6,13 +6,23 @@ import {
   VStack,
   Heading,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import ContainerPage from "@components/ContainerPage";
 import { useState } from "react";
+import { useRef } from "react";
+import { Router } from "next/router";
 
 export default function EditBlog() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
+  const toast = useToast();
+  const toastIdRef = useRef();
+
+  function postBlog() {
+    toastIdRef.current = toast({ description: "Blog posted" });
+  }
 
   const handleTitle = (event) => {
     setTitle(event.target.value);
@@ -25,9 +35,22 @@ export default function EditBlog() {
   };
 
   const handleSubmit = () => {
+    if (!title || !content) {
+      toastIdRef.current = toast({
+        description: "All fields must not be empty",
+        status: "error",
+      });
+      return;
+    }
+
     try {
       const res = createBlog({ title, content });
-      console.log(res);
+      if (res.status == 200) {
+        postBlog();
+        Router.push("/blog/");
+      } else {
+        throw Error();
+      }
     } catch (error) {
       console.log(error);
     }
