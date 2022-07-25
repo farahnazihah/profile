@@ -2,21 +2,25 @@ import ContainerPage from "@components/ContainerPage";
 import BlogCard from "@components/blog/BlogCard";
 import { getListAllBlog } from "../../api";
 import { Button, Heading, Link, Icon } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 export default function Blog({ listBlog }) {
+  const router = useRouter();
   return (
     <>
       <ContainerPage>
         <Heading color="tosca.600">Stories and Adventures</Heading>
-        {/* <Button>Creator Mode</Button> */}
         <Button size="md" w={["100%", "50%"]} href="/blog/create">
           Creator mode
         </Button>
         <Button
+          as={"button"}
           variant="outline"
           size="md"
           w={["100%", "50%"]}
-          href="/blog/create"
+          onClick={() => {
+            router.push("/blog/create");
+          }}
         >
           Create new post
         </Button>

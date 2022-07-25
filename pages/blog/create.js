@@ -11,30 +11,30 @@ import {
 import ContainerPage from "@components/ContainerPage";
 import { useState } from "react";
 import { useRef } from "react";
-import { Router } from "next/router";
+import { useRouter } from "next/router";
 
 export default function EditBlog() {
+  const router = useRouter();
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
   const toast = useToast();
   const toastIdRef = useRef();
 
-  function postBlog() {
+  function handlePostBlog() {
     toastIdRef.current = toast({ description: "Blog posted" });
   }
 
   const handleTitle = (event) => {
     setTitle(event.target.value);
-    console.log(title);
   };
 
   const handleContent = (event) => {
     setContent(event.target.value);
-    console.log(content);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!title || !content) {
       toastIdRef.current = toast({
         description: "All fields must not be empty",
@@ -44,10 +44,10 @@ export default function EditBlog() {
     }
 
     try {
-      const res = createBlog({ title, content });
+      const res = await createBlog({ title, content });
       if (res.status == 200) {
-        postBlog();
-        Router.push("/blog/");
+        handlePostBlog();
+        router.push("/blog/");
       } else {
         throw Error();
       }

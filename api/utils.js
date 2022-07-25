@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 export async function fetchGet(url) {
   const res = await fetch(url, {
@@ -12,8 +12,6 @@ export async function fetchGet(url) {
 }
 
 export async function fetchPost(url, payload) {
-  console.log(payload);
-  console.log(url);
   const res = await fetch(url, {
     method: "POST",
     body: JSON.stringify(payload),
@@ -23,5 +21,5 @@ export async function fetchPost(url, payload) {
     },
   });
 
-  return res.json();
+  return res;
 }
