@@ -157,6 +157,6 @@ export async function getStaticProps() {
     props: {
       listBlog,
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 }

@@ -62,7 +62,7 @@ export default function EditBlog() {
   return (
     <>
       <ContainerPage>
-        <Heading color="tosca.600" mb="3rem">
+        <Heading color="tosca.400" mb="3rem">
           Edit {title}
         </Heading>
         <VStack spacing={"1rem"} mb="3rem">
