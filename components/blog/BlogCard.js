@@ -8,13 +8,15 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import Router from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import Cookies from "js-cookie";
 import { likeBlog } from "../../api/";
+import { BlogContext } from "@pages/blog";
 
 export default function BlogCard({ data }) {
+  const creatorMode = useContext(BlogContext);
   const [likes, setLikes] = useState(data.like);
   const [solidheart, setSolidHeart] = useState(false);
 
@@ -64,17 +66,18 @@ export default function BlogCard({ data }) {
             />
             <Text textAlign={"center"}>{likes} likes</Text>
           </Center>
-
-          <Center m={"1rem"} color="tosca.400" flexDirection={"column"}>
-            <Icon
-              as={HiOutlinePencilAlt}
-              w={"2rem"}
-              h="auto"
-              _hover={{ color: "tosca.600" }}
-              onClick={() => handleEdit(data)}
-            />
-            <Text textAlign={"center"}>Edit</Text>
-          </Center>
+          {creatorMode && (
+            <Center m={"1rem"} color="tosca.400" flexDirection={"column"}>
+              <Icon
+                as={HiOutlinePencilAlt}
+                w={"2rem"}
+                h="auto"
+                _hover={{ color: "tosca.600" }}
+                onClick={() => handleEdit(data)}
+              />
+              <Text textAlign={"center"}>Edit</Text>
+            </Center>
+          )}
         </HStack>
       </Flex>
     </>

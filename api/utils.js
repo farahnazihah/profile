@@ -12,11 +12,12 @@ export async function fetchGet(url) {
 }
 
 export async function fetchPost(url, payload) {
+  const token = Cookies.get("token");
   const res = await fetch(url, {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
-      Authorization: `Bearer ${API_KEY}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
   });
@@ -25,11 +26,12 @@ export async function fetchPost(url, payload) {
 }
 
 export async function fetchPut(url, payload) {
+  const token = Cookies.get("token");
   const res = await fetch(url, {
     method: "PUT",
     body: JSON.stringify(payload),
     headers: {
-      Authorization: `Bearer ${API_KEY}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
   });
