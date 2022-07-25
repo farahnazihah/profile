@@ -23,3 +23,16 @@ export async function fetchPost(url, payload) {
 
   return res;
 }
+
+export async function fetchPut(url, payload) {
+  const res = await fetch(url, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  return res;
+}

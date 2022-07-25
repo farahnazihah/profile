@@ -11,6 +11,7 @@ import Router from "next/router";
 import { useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { HiOutlinePencilAlt } from "react-icons/hi";
+import Cookies from "js-cookie";
 import { likeBlog } from "../../api/";
 
 export default function BlogCard({ data }) {
@@ -30,10 +31,12 @@ export default function BlogCard({ data }) {
     }
   };
 
-  const handleEdit = (blogId) => {
+  const handleEdit = (data) => {
+    Cookies.set("title", data.title);
+    Cookies.set("content", data.content);
     Router.push({
       pathname: "/blog/edit",
-      query: { id: blogId },
+      query: { id: data.id },
     });
   };
 
@@ -68,7 +71,7 @@ export default function BlogCard({ data }) {
               w={"2rem"}
               h="auto"
               _hover={{ color: "tosca.600" }}
-              onClick={() => handleEdit(data.id)}
+              onClick={() => handleEdit(data)}
             />
             <Text textAlign={"center"}>Edit</Text>
           </Center>
