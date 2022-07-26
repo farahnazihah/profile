@@ -17,10 +17,6 @@ import Cookies from "js-cookie";
 export default function EditBlog() {
   const router = useRouter();
   const { id } = router.query;
-  const curTitle = Cookies.get("title");
-  const curContent = Cookies.get("content");
-  // Cookies.remove("title");
-  // Cookies.remove("content");
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -29,8 +25,24 @@ export default function EditBlog() {
   const toastIdRef = useRef();
 
   useEffect(() => {
+    const curTitle = Cookies.get("title");
+    const curContent = Cookies.get("content");
+    Cookies.remove("title");
+    Cookies.remove("content");
+
     curTitle ? setTitle(curTitle) : setTitle("");
     curContent ? setContent(curContent) : setContent("");
+
+    const token = Cookies.get("token");
+    console.log(token == undefined);
+    if (token == undefined) {
+      toast({
+        title: `You don't have permission to edit`,
+        status: "error",
+        duration: "3000",
+      });
+      router.push("/blog");
+    }
   }, []);
 
   function handleSubmitEdit() {
@@ -46,6 +58,8 @@ export default function EditBlog() {
   };
 
   const handleSubmit = async () => {
+    const token = Cookies.get("token");
+    console.log(token == undefined);
     try {
       const res = await editBlog({ title, content, id });
       if (res.status == 200) {
@@ -56,13 +70,19 @@ export default function EditBlog() {
       }
     } catch (error) {
       console.log(error);
+      toast({
+        title: `You don't have permission to edit`,
+        status: "error",
+        duration: "3000",
+      });
+      router.push("/blog");
     }
   };
 
   return (
     <>
       <ContainerPage>
-        <Heading color="tosca.400" mb="3rem">
+        <Heading color="tosca.400" my="2rem">
           Edit {title}
         </Heading>
         <VStack spacing={"1rem"} mb="3rem">

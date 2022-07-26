@@ -19,6 +19,7 @@ import {
   Tooltip,
   Flex,
   Spacer,
+  useColorMode,
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
@@ -31,6 +32,7 @@ import { useEffect } from "react";
 export const BlogContext = createContext();
 
 export default function Blog({ listBlog }) {
+  const { colorMode } = useColorMode();
   const router = useRouter();
   const token = Cookies.get("token");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,9 +53,7 @@ export default function Blog({ listBlog }) {
     console.log(pwd);
     console.log(process.env.NEXT_PUBLIC_CREATOR_PASSWORD);
     if (pwd == process.env.NEXT_PUBLIC_CREATOR_PASSWORD) {
-      console.log(pwd);
       setCreatorMode(true);
-      console.log("masuk sini");
       setWarning(false);
       Cookies.set("token", process.env.NEXT_PUBLIC_API_KEY);
       onClose();
@@ -78,7 +78,9 @@ export default function Blog({ listBlog }) {
                 Enter creator&#39;s password
               </ModalHeader>
               <ModalCloseButton />
-              <ModalBody color={"white"}>
+              <ModalBody
+                color={colorMode === "light" ? "content.light" : "content.dark"}
+              >
                 <Text
                   display={warning ? "block" : "none"}
                   mb="0.5rem"
@@ -86,7 +88,7 @@ export default function Blog({ listBlog }) {
                 >
                   Wrong password
                 </Text>
-                <Text>For sistech: password &quot;sistech&quot;</Text>
+                <Text>For sistech, password &quot;sistech&quot;</Text>
                 <Input value={pwd} onChange={handleChange} />
               </ModalBody>
 
@@ -105,7 +107,9 @@ export default function Blog({ listBlog }) {
               </ModalFooter>
             </ModalContent>
           </Modal>
-          <Heading color="tosca.400">Stories and Adventures</Heading>
+          <Heading color="tosca.400" my="2rem">
+            Stories and Adventures
+          </Heading>
           <Flex>
             <Spacer />
             {creatorMode ? (

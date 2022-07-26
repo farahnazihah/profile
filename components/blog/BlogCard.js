@@ -6,6 +6,7 @@ import {
   Icon,
   Center,
   HStack,
+  useColorMode,
 } from "@chakra-ui/react";
 import Router from "next/router";
 import { useContext, useState } from "react";
@@ -16,6 +17,7 @@ import { likeBlog } from "../../api/";
 import { BlogContext } from "@pages/blog";
 
 export default function BlogCard({ data }) {
+  const { colorMode } = useColorMode();
   const creatorMode = useContext(BlogContext);
   const [likes, setLikes] = useState(data.like);
   const [solidheart, setSolidHeart] = useState(false);
@@ -34,6 +36,7 @@ export default function BlogCard({ data }) {
   };
 
   const handleEdit = (data) => {
+    console.log(data);
     Cookies.set("title", data.title);
     Cookies.set("content", data.content);
     Router.push({
@@ -46,10 +49,11 @@ export default function BlogCard({ data }) {
     <>
       <Flex
         p={"24px"}
-        bgColor={"black"}
+        bgColor={colorMode === "light" ? "card.light" : "card.dark"}
         borderRadius="20px"
         flexDir={"column"}
         my="1rem"
+        boxShadow={"md"}
       >
         <Heading as={"h5"} fontSize={["3xl"]} color={"tosca.400"} mb="1rem">
           {data.title}
